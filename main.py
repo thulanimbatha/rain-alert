@@ -15,4 +15,13 @@ response.raise_for_status()
 
 data = response.json()
 
-print(data)
+forecast_day = data["forecast"]["forecastday"]  # this is a list
+
+first_day_forecast = forecast_day[0]["day"]
+
+if first_day_forecast["daily_will_it_rain"] == 1:
+    print("it will rain today")
+elif first_day_forecast["daily_will_it_rain"] == 0:
+    print("it will NOT rain")
+
+# print(first_day_forecast)
