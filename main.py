@@ -17,11 +17,11 @@ data = response.json()
 
 today_forecast = data["forecast"]["forecastday"][0]  # this is a list
 
-forecast_hours = today_forecast["hour"]  # this is a list
+forecast_hours = today_forecast["hour"][:12]  # slice list to only include first 12 elements
 
 for fs_hour in forecast_hours:
     if fs_hour["will_it_rain"] == 0: 
         pass
     elif fs_hour["will_it_rain"] == 1:
         print(f"Bring an umbrella at: {fs_hour['time']}")
-        
+
