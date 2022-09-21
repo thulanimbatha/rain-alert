@@ -26,7 +26,6 @@ will_it_rain = False
 
 for fs_hour in forecast_hours:
     if fs_hour["will_it_rain"] == 0: 
-        will_it_rain = False
         pass
     elif fs_hour["will_it_rain"] == 1:
         will_it_rain = True
