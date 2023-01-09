@@ -1,9 +1,10 @@
 import requests
 from twilio.rest import Client
+import os
 
-api_key = "b68c788d8147467a8ff212807221509"
-account_sid ="ACfa486f58e390aaf8fdb12578a32fd640"   #Twilio account details
-auth_token = "5c4bfa87d74f879c4e903769bfa328fa"     #Twilio account details
+api_key = os.environ.get('WEATHER_API_KEY')
+account_sid = os.environ.get('TWILIO_ACC_SID')   #Twilio account details
+auth_token = os.environ.get('TWILIO_AUTH_TOKEN')     #Twilio account details
 
 parameters = {
     "key": api_key,
